@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: brown;
+    background-image :url("https://www.mundodeportivo.com/alfabeta/hero/2020/11/Libreria-Minecraft.jpg?width=768&aspect_ratio=16:9&format=nowebp");
+    background-size: 70%;
+}
+
+#ulnav{
+    font-size: 80px;
+    padding: 80px;
+    margin: 10px;
+    text-align: center;
+    
+}
+
+#linav{
+    color: white;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+@media (hover: hover){
+    a:hover{
+        background: mediumseagreen;
+        color: #9d2828;
+    }
+}
+
+#h1_inicio{
+    color: white;
+    text-align: center;
+    font-size: 60px;
+}
+
+nav{
+    display: grid;
+    grid-column: 1/-1;
+    place-content: center;
+    margin-bottom: 15px;
+
+}
+.nav_header{
+    padding: 15px;
+    display: flex;
+    justify-content: center;  
+}
+nav>ul>li>a:hover{
+    color: black;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    
+}
+.nav_header>ul>li{
+    display: inline-block;
+    padding: 16px;
+    font-size: 40px;
+    color: white;
+}
+
+.a_nav_header{
+    color: rgb(0, 0, 0);
+}
+
+
+.h3_libros{
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    padding: 13px;
+}
+
+
+.h2_libros{
+    font-size: 28px;
+    padding: 25px;
+}
+
+.div_panel{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main_libros{
+    border: 4px rgb(0, 0, 0) solid;
+    background-color: rgb(71, 64, 64);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.main_imput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#lista{
+    width: 100%;
+    background-color: white;
+    margin: 70px;
+}
+

@@ -1,0 +1,24 @@
+{
+  "Libros": [
+    {
+      "Nombrelibro": "Tarzan",
+      "autor": "Edgar Rice Burroughs",
+      "prestado": false,
+      "id": 1
+    },
+    {
+      "Nombrelibro": "Cenicienta",
+      "autor": "Charles Perrault",
+      "prestado": false,
+      "id": 2
+    }
+  ],
+  "Clientes": [
+    {
+      "dni": 434499682,
+      "nombre": "agustin tapie",
+      "direccion": "las acacias",
+      "id": 1
+    }
+  ]
+}

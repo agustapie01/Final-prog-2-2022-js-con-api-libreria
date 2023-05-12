@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Libros.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="FCokTTdXIAQ2vlb111111.jpg" alt="">
+        <nav class="nav_header">
+                <ul class="ul_nav">
+                    <li><a href="index.html" class="a_nav_header">Inicio</a></li>
+                  <li><a href="Prestamos.html" class="a_nav_header">Prestamo</a></li>
+                    <li><a href="Libros.html" class="a_nav_header">Libros</a></li>
+                    <li><a href="Clientes.html" class="a_nav_header">Cliente</a></li>
+                </ul>
+        </nav>
+    </header>
+
+    <main class="main_libros">
+            <h1 class="h3_libros">Registro de Libros </h1>
+            <div class="div_panel">
+                <h4 class="h2_libros">Dar de alta a un nuevo libro</h4>
+                
+                <div class="main_imput">
+                    <input type="text" placeholder="Nombre del libro" id="NomLibro"> <br>
+    
+                    <input type="text" placeholder="autor" id="autor_libro"> <br>
+    
+                    <input type="number" placeholder="Veces prestado" id="contprestamo"> <br>
+                </div>
+                
+                <div class="main_botones"> 
+                    <button onclick="guardarlibro()" id="btnGuardar">Guardar</button> 
+    
+                    <button onclick="modificarlibro()" id="btnModificar">Modificar</button>
+    
+                    <button onclick="cancelarlibro()" id="btnCancelar">Cancelar</button> 
+    
+                    <button onclick="mostrarlibro()" id="btnMostrar">Mostrar</button> 
+                </div>
+
+                <table id="lista"></table>
+                
+            </div>
+    </main>
+
+</body>
+</html>
