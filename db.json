@@ -7,10 +7,16 @@
       "id": 1
     },
     {
-      "Nombrelibro": "Cenicienta",
+      "Nombrelibro": "Cenicientaaaaa",
       "autor": "Charles Perrault",
       "prestado": false,
       "id": 2
+    },
+    {
+      "Nombrelibro": "shrek",
+      "autor": "el matiiii",
+      "prestado": false,
+      "id": 3
     }
   ],
   "Clientes": [

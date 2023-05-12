@@ -12,9 +12,10 @@ mostrarlibros()
 btnMostrar.hidden = true
 btnCancelar.hidden = true
 imputPrestado.hidden = true
+btnEditar.hidden = true
 
 
-
+let auxId 
 
 
 async function mostrarlibros(){
@@ -70,6 +71,45 @@ async function borrarlibro(id){
 
 
 }
+
+
+
+
+async function editarlibro(id){
+  auxId = id
+  resp = await axios.get ("http://localhost:3000/Libros/"+ id)
+        btnCancelar.hidden =false
+        btnGuardar.hidden = true
+        btnEditar.hidden = false
+        NomLibro.value = resp.data.Nombrelibro
+        autor.value = resp.data.autor
+        
+
+}
+
+
+
+
+async function editarlibro1(){
+  resp = await axios.patch("http://localhost:3000/Libros/"+ auxId,{
+    Nombrelibro: NomLibro.value,
+    autor:autor.value
+    
+  })
+}
+
+async function cancelarEdit(){
+  NomLibro.value = ""
+  autor.value = ""
+
+  btnCancelar.hidden = true
+  btnEditar.hidden = true
+  btnGuardar.hidden = false
+
+  
+}
+
+
 
 
 

@@ -64,7 +64,7 @@ async function borrarCliente(id){
 }
 async function editarCliente(id){
     auxId = id
-    resp = await axios.get("http://localhost:3000/cliente/"+ id)
+    resp = await axios.get("http://localhost:3000/Clientes/"+ id)
     btnGuardar.hidden = true
     btnEditClient.hidden = false
     btnCancelar.hidden = false
@@ -75,7 +75,7 @@ async function editarCliente(id){
 
 
 async function editarCliente1(){
-    resp = await axios.put("http://localhost:3000/cliente/"+ auxId, {
+    resp = await axios.put("http://localhost:3000/Clientes/"+ auxId, {
      dni:dni.value,
      nombre:nomb.value,
      direccion:dire.value  
