@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libros</title>
     <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Prestamos.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,6 +21,28 @@
                 </ul>
         </nav>
 </header>
+
+<main>
+    <h2>Registro de estado de los libros</h2>
+    <div class="div_panel">
+        <label for="selectLibro">Selecciona un libro disponible</label>
+        <div>
+            <label for="regPrestamo"></label>
+            <select name="selectCliente" id="SelectCliente"></select>
+            <select name="selectLibro" id="selectLibro"></select>
+            <input type="date" id="fecha" value="1999-01-01" min="1999-01-01">
+            <button onclick="alquilarLibro()">Alquilar</a></button>
+        </div>
+        <br>
+        <table id="regPrestamo"></table>
+        <br>
+
+        <button onclick="reporteLibros()">Reporte libros</button>
+        <button onclick="reporteNoDevueltos()">Reporte libros no devueltos</button>
+        <table id="regAlquilados"></table>
+        <br>
+    </div>
+</main>
 
 </body>
 </html>
