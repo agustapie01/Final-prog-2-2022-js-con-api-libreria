@@ -7,16 +7,16 @@
       "id": 1
     },
     {
-      "Nombrelibro": "Cenicientaaaaa",
-      "autor": "Charles Perrault",
-      "prestado": false,
-      "id": 2
-    },
-    {
       "Nombrelibro": "shrek",
       "autor": "el matiiii",
       "prestado": false,
       "id": 3
+    },
+    {
+      "Nombrelibro": "El principito",
+      "autor": "La ro",
+      "prestado": false,
+      "id": 4
     }
   ],
   "Clientes": [
@@ -25,6 +25,22 @@
       "nombre": "agustin tapie",
       "direccion": "las acacias",
       "id": 1
+    },
+    {
+      "dni": 44373078,
+      "nombre": "Rosario diaz",
+      "direccion": "vive en la calle ",
+      "id": 2
+    }
+  ],
+
+  "prestamo":[
+    {
+      "LibrosId": 1,
+      "clienteid": 1,
+      "fechaprestamo": "13/05/2023",
+      "fechadevolucion":"17/05/2023",
+      "id": 2
     }
   ]
 }

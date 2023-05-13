@@ -116,3 +116,12 @@ nav>ul>li>a:hover{
     margin: 70px;
 }
 
+
+.main_prestamo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(197, 57, 57);
+}
+
