@@ -89,10 +89,83 @@ async function devolverLibros(id){
     });
 }
    
-async function alquilarLibros() {
+async function alquilarLibro() {
+
+    if(
+        selectLibro.value > 0 &&
+        selectCliente.value > 0 &&
+        fecha1 != fecha.value
+    ){
+        axId = selectLibro.value;
+        cont = resp.data.prestado
+        cont1 = parseInt(cont)
+        resp4 = axios.patch("http://localhost:3000/Libros/"+ axId,{
+            prestado: cont + 1,
+            prestado : true,
+        });
+
+        resp2 = await axios.post("http://localhost:3000/prestamo",{
+            LibroId: parseInt/(axId),
+            clienteId: parseInt(idClient),
+            fechaPrestamo:fecha.value,
+            fechaDevolucion: "",
+
+
+        });
+
+        
+
+    }
     
 }
     
+async function reporteLibros(){
+    resp = await axios.get("http://localhost:3000/prestamo");
+    resp2 = await axios.get("http://localhost:3000/Clientes");
+    resp3 = await axios.get("http://localhost:3000/Libros");
+
+    regAlquilados.innerHTML += `
+    <caption>Reporte de todos los Libros alquilados</caption>
+        <tr>
+         <th scope="col">Nombre</th>
+         <th scope="col">Autor</th>
+         <th scope="col">Cliente</th>
+         <th scope="col">Fecha Prestamo</th>
+         <th scope="col">Fecha Devolucion</th>
+        </tr    `
+
+        regAlquilados.innerHTML += `       
+         <tr>
+         <th scope="col"></th>
+         <th scope="col"></th>
+         <th scope="col"></th>
+         <th scope="col"></th>
+         </tr>
+         `
+         
+         resp.data.forEach((prestamo)=>{
+            resp2.data.forEach((Clientes) => {
+                
+            
+         });
+
+         resp3.data.forEach((Libros) => {
+            NombLibro = Libros.Nomberlibro
+            autor = Libros.autor
+            prestado = Libros.prestado
+         })
+
+         regAlquilados.innerHTML +=`       
+         <tr>
+         <th scope="col"> ${NombLibro}</th>
+         <th scope="col">${autor}</th>
+         <th scope="col">${nombCliente}</th>
+         <th scope="col">${prestamo.fechaPrestamo}</th>
+         <th scope="col">${prestamo.fechaDevolucion}</th>
+         </tr>
+         `          
+        
+}
         
     
  
