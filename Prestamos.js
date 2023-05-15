@@ -15,7 +15,8 @@ let idClient
 let fecha1 = fecha.value
 let fechaDevol = new Date()
 let fechaDev = fechaDevol.toLocaleString()
-let nombCliente
+let nombautor
+let nomblibro
 
 
 
@@ -118,81 +119,82 @@ async function alquilarLibro() {
     
 }
     
-async function reporteLibros(){
-    resp = await axios.get("http://localhost:3000/prestamo");
-    resp2 = await axios.get("http://localhost:3000/Clientes");
-    resp3 = await axios.get("http://localhost:3000/Libros");
+// async function reporteLibros(){
+//     resp = await axios.get("http://localhost:3000/prestamo");
+//     resp2 = await axios.get("http://localhost:3000/Clientes");
+//     resp3 = await axios.get("http://localhost:3000/Libros");
 
-    regAlquilados.innerHTML = `
-    <caption>Reporte de todos los Libros alquilados</caption>
-        <tr>
-         <th scope="col">Nombre</th>
-         <th scope="col">Autor</th>
-         <th scope="col">Cliente</th>
-         <th scope="col">Fecha Prestamo</th>
-         <th scope="col">Fecha Devolucion</th>
-        </tr    `
+//     regAlquilados.innerHTML = `
+//     <caption>Reporte de todos los Libros alquilados</caption>
+//         <tr>
+//          <th scope="col">Nombre</th>
+//          <th scope="col">Autor</th>
+//          <th scope="col">Cliente</th>
+//          <th scope="col">Fecha Prestamo</th>
+//         </tr    `
 
-        regAlquilados.innerHTML += `       
-         <tr>
-         <th scope="col"></th>
-         <th scope="col"></th>
-         <th scope="col"></th>
-         <th scope="col"></th>
-         </tr>
-         `
+//         regAlquilados.innerHTML += `       
+//          <tr>
+//          <th scope="col"></th>
+//          <th scope="col"></th>
+//          <th scope="col"></th>
+//          <th scope="col"></th>
+//          </tr>
+//          `
          
-         resp.data.forEach((prestamo)=>{
-            resp2.data.forEach((Clientes) => {
-                
-            
-         })
+//     resp.data.forEach((prestamo)=>{
+//     resp2.data.forEach((Clientes) => {
 
-         resp3.data.forEach((Libros) => {
-            NombLibro = Libros.Nombrelibro
-            autor = Libros.autor
-            prestado = Libros.prestado
-         })
+//         if(prestamo.clienteId === clienteId){
+//             nombCliente = Clientes.nombre
+//         } 
+//     })
 
-         regAlquilados.innerHTML +=`       
-         <tr>
-         <th scope="col"> ${NombLibro}</th>
-         <th scope="col">${autor}</th>
-         <th scope="col">${nombCliente}</th>
-         <th scope="col">${prestamo.fechaPrestamo}</th>
-         <th scope="col">${prestamo.fechaDevolucion}</th>
-         </tr>
-         `          
+//     resp3.data.forEach((Libros) => {
+//             if (prestamo.LibroId === Libro.id){
+//                 nombautor = Libros.autor
+//                 nomblibro = Libros.Nombrelibro
+//             }
+//          })
+
+//          regAlquilados.innerHTML +=`       
+//          <tr>
+//          <th scope="col"> ${NombLibro}</th>
+//          <th scope="col">${autor}</th>
+//          <th scope="col">${nombCliente}</th>
+//          <th scope="col">${prestamo.fechaPrestamo}</th>
+//          </tr>
+//          `          
         
-});
+// });
         
-}    
+// }    
  
-async function reporteNodevueltos(){
-    try{
-        resp= await axios.get("http://localhost:3000/Libros");
-        resp2 = await axios.get("http://localhost:3000/prestamo");
-        regAlquilados.innerHTML = `
-        <caption>Registro de Libros alquilados no devueltos</caption>
-        <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Autor</th>
-        </tr    `;
+// async function reporteNodevueltos(){
+//     try{
+//         resp= await axios.get("http://localhost:3000/Libros");
+//         resp2 = await axios.get("http://localhost:3000/prestamo");
+//         regAlquilados.innerHTML = `
+//         <caption>Registro de Libros alquilados no devueltos</caption>
+//         <tr>
+//             <th scope="col">Nombre</th>
+//             <th scope="col">Autor</th>
+//         </tr    `;
     
 
-    resp.data.forEach((Libros) =>{
-        if(Libros.prestado == true) {
-            regAlquilados.innerHTML += `       
-            <tr>
-            <th scope="col"> ${Libros.Nombrelibro}</th>
-            <th scope="col">${Libros.autor}</th>
-            </tr>
-            `;
-        }
-    })}
-    catch (error) {
-        alert(error)
-        alert("se predujo un error en la funcion")
-    }
-}
+//     resp.data.forEach((Libros) =>{
+//         if(Libros.prestado == true) {
+//             regAlquilados.innerHTML += `       
+//             <tr>
+//             <th scope="col"> ${Libros.Nombrelibro}</th>
+//             <th scope="col">${Libros.autor}</th>
+//             </tr>
+//             `;
+//         }
+//     })}
+//     catch (error) {
+//         alert(error)
+//         alert("se predujo un error en la funcion")
+//     }
+// }
 

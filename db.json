@@ -7,7 +7,7 @@
       "id": 1
     },
     {
-      "Nombrelibro": "cenicienta",
+      "Nombrelibro": "Cenicienta",
       "autor": "...",
       "prestado": true,
       "id": 2
@@ -15,19 +15,32 @@
   ],
   "Clientes": [
     {
-      "dni": 43499682,
-      "nombre": "Agustin tapie",
-      "direccion": "Las acacias 1400",
+      "dni": "323",
+      "nombre": "agustin tapie",
+      "direccion": "acacias",
       "id": 1
+    },
+    {
+      "dni": 43499682,
+      "nombre": "rosario diaz",
+      "direccion": "guemez 1350",
+      "id": 2
     }
   ],
   "prestamo": [
     {
-      "LibroId": 2,
+      "LibroId": 1,
       "clienteId": 1,
-      "fechaPrestamo": "2023-01-11",
-      "fechaDevolucion": "",
+      "fechaPrestamo": "2023-01-20",
+      "fechaDevolucion": "15/5/2023, 21:33:56",
       "id": 1
+    },
+    {
+      "LibroId": 2,
+      "clienteId": 2,
+      "fechaPrestamo": "2023-11-23",
+      "fechaDevolucion": "",
+      "id": 2
     }
   ]
 }
