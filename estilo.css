@@ -125,3 +125,25 @@ nav>ul>li>a:hover{
     background-color: rgb(197, 57, 57);
 }
 
+#caption_prestamo{
+    background-color: white;
+    padding: 10px;
+    margin: 20px;
+}
+
+#h1_prestamo{
+    color: white;
+    margin: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
+}
+
+
+#li_prestamo{
+    color: white;
+}
+
+
+.a_nav_header{
+    color: white;
+}

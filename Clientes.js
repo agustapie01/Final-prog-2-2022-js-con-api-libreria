@@ -63,6 +63,10 @@ async function borrarCliente(id){
     
 
 }
+
+
+
+
 async function editarCliente(id){
     auxId = id
     resp = await axios.get("http://localhost:3000/Clientes/"+ id)

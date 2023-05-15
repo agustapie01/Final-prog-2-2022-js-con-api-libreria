@@ -11,11 +11,10 @@
 </head>
 <body>
     <header>
-        <img src="" alt="">
         <nav class="nav_header">
                 <ul class="ul_nav">
                     <li><a href="index.html" class="a_nav_header">Inicio</a></li>
-                  <li><a href="Prestamos.html" class="a_nav_header">Prestamo</a></li>
+                    <li><a href="Prestamos.html" class="a_nav_header">Prestamo</a></li>
                     <li><a href="Libros.html" class="a_nav_header">Libros</a></li>
                     <li><a href="Clientes.html" class="a_nav_header">Cliente</a></li>
                 </ul>
@@ -23,14 +22,14 @@
 </header>
 
 <main class="main_prestamo">
-    <h1>Registro de estado de los libros</h1>
+    <h1 id="h1_prestamo">Registro de estado de los libros</h1>
     <div class="div_panel">
         <label for="selectLibro">Selecciona un libro disponible</label>
         <div>
             <label for="regPrestamo"></label>
             <select name="selectCliente" id="selectCliente"></select>
             <select name="selectLibro" id="selectLibro"></select>
-            <input type="date" id="fecha" value="1999-01-01" min="1999-01-01">
+            <input type="date" id="fecha" value="2023-01-01" min="1999-01-01" max="2030-12-31">
             <button onclick="alquilarLibro()">Alquilar</a></button>
         </div>
         <br>
@@ -46,3 +45,4 @@
 
 </body>
 </html>
+

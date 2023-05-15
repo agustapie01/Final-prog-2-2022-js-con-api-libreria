@@ -1,46 +1,33 @@
 {
   "Libros": [
     {
-      "Nombrelibro": "Tarzan",
-      "autor": "Edgar Rice Burroughs",
+      "Nombrelibro": "shrek",
+      "autor": "...",
       "prestado": false,
       "id": 1
     },
     {
-      "Nombrelibro": "shrek",
-      "autor": "el matiiii",
-      "prestado": false,
-      "id": 3
-    },
-    {
-      "Nombrelibro": "El principito",
-      "autor": "La ro",
-      "prestado": false,
-      "id": 4
+      "Nombrelibro": "cenicienta",
+      "autor": "...",
+      "prestado": true,
+      "id": 2
     }
   ],
   "Clientes": [
     {
-      "dni": 434499682,
-      "nombre": "agustin tapie",
-      "direccion": "las acacias",
+      "dni": 43499682,
+      "nombre": "Agustin tapie",
+      "direccion": "Las acacias 1400",
       "id": 1
-    },
-    {
-      "dni": 44373078,
-      "nombre": "Rosario diaz",
-      "direccion": "vive en la calle ",
-      "id": 2
     }
   ],
-
-  "prestamo":[
+  "prestamo": [
     {
-      "LibrosId": 1,
-      "clienteid": 1,
-      "fechaprestamo": "13/05/2023",
-      "fechadevolucion":"17/05/2023",
-      "id": 2
+      "LibroId": 2,
+      "clienteId": 1,
+      "fechaPrestamo": "2023-01-11",
+      "fechaDevolucion": "",
+      "id": 1
     }
   ]
 }
