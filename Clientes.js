@@ -17,15 +17,42 @@ btnMostrar.hidden = true
 btnCancelar.hidden = true
 
 
-
 async function guardarcliente(){
+
+      const tamaño = dni.value.length;
+  
+      const resp2 = await axios.get("http://localhost:3000/Clientes");
+      if (resp2.data.find((cliente) => cliente.dni == dni.value && tamaño <= 8)) {
+        alert("No se puede guardar");
+      } else {
+        const resp1 = await axios.post("http://localhost:3000/Clientes", {
+          dni: parseInt(dni.value),
+          nombre: nomb.value,
+          direccion: dire.value,
+        });
+      }
+
+  }
+
+
+
+
+// async function guardarcliente(){
+
+//     const tamaño = dni.value.lenght;
     
-    resp1 = await axios.post ("http://localhost:3000/Clientes", {
-        dni: parseInt(dni.value),
-        nombre: nomb.value,
-        direccion: dire.value,
-    })
-}
+//     resp1 = await axios.get("http://localhost:3000/Clientes");
+//     if(resp1.data.forEach(cliente => cliente.dni === dni.value && (tamaño <= 8))){
+//             alert ("no se puede guardar")
+//         }
+//         else{            
+//             resp2 = await axios.post ("http://localhost:3000/Clientes", {       
+//             dni: parseInt(dni.value),
+//             nombre: nomb.value,
+//             direccion: dire.value,
+//         })
+//     }
+// }
 
 
 async function mostrarcliente(){
@@ -57,9 +84,18 @@ async function mostrarcliente(){
 }
 
 async function borrarCliente(id){
-    
+    auxId = id
     resp = await axios.get("http://localhost:3000/Clientes/"+id)
-    await axios.delete("http://localhost:3000/Clientes/" +id)
+    resp2 = await axios.get("http://localhost:3000/prestamo")
+
+    if(resp2.data.find(prestamo => (prestamo.fechaDevolucion === "") && (resp2.data.find(prestamo => prestamo.clienteId === auxId)))){
+        alert ("No se puede borrar el cliente porque tiene un prestamo activo")
+    }
+    
+    else{
+        await axios.delete("http://localhost:3000/Clientes/" +id)
+    }
+
     
 
 }
@@ -70,21 +106,29 @@ async function borrarCliente(id){
 async function editarCliente(id){
     auxId = id
     resp = await axios.get("http://localhost:3000/Clientes/"+ id)
-    btnGuardar.hidden = true
-    btnEditClient.hidden = false
-    btnCancelar.hidden = false
-    nomb.value
-    dni.value 
-    dire.value 
+    resp2 = await axios.get("http://localhost:3000/prestamo")
+
+    if(resp2.data.find((prestamo)=> prestamo.fechaDevolucion === "" && (prestamo.clienteId === auxId))){  
+          alert("No se puede editar el cliente porque tiene un prestamo activo")    
+    }
+
+    else{
+      btnGuardar.hidden = true
+      btnEditClient.hidden = false
+      btnCancelar.hidden = false
+      nomb.value
+      dni.value 
+      dire.value 
+    }
 }
 
 
 async function editarCliente1(){
-    resp = await axios.put("http://localhost:3000/Clientes/"+ auxId, {
-     dni:dni.value,
-     nombre:nomb.value,
-     direccion:dire.value  
-    })
+        resp = await axios.patch("http://localhost:3000/Clientes/"+ auxId), {
+        dni:dni.value,
+        nombre:nomb.value,
+        direccion:dire.value 
+    }
 }
 
 function cancelarEdicion(){

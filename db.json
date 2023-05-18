@@ -1,46 +1,56 @@
 {
   "Libros": [
     {
-      "Nombrelibro": "shrek",
-      "autor": "...",
+      "Nombrelibro": "ceni",
+      "autor": "asd",
       "prestado": false,
+      "vecesPrestado": 0,
       "id": 1
     },
     {
-      "Nombrelibro": "Cenicienta",
-      "autor": "...",
-      "prestado": true,
+      "Nombrelibro": "asdasd",
+      "autor": "asdasdddd",
+      "prestado": false,
+      "vecesPrestado": 0,
       "id": 2
     }
   ],
-  "Clientes": [
-    {
-      "dni": "323",
-      "nombre": "agustin tapie",
-      "direccion": "acacias",
-      "id": 1
-    },
-    {
-      "dni": 43499682,
-      "nombre": "rosario diaz",
-      "direccion": "guemez 1350",
-      "id": 2
-    }
-  ],
+  "Clientes": [],
   "prestamo": [
     {
       "LibroId": 1,
       "clienteId": 1,
-      "fechaPrestamo": "2023-01-20",
-      "fechaDevolucion": "15/5/2023, 21:33:56",
+      "fechaPrestamo": "2023-01-19",
+      "fechaDevolucion": "17/5/2023, 23:49:20",
       "id": 1
     },
     {
-      "LibroId": 2,
-      "clienteId": 2,
-      "fechaPrestamo": "2023-11-23",
-      "fechaDevolucion": "",
+      "LibroId": 1,
+      "clienteId": 1,
+      "fechaPrestamo": "2023-01-18",
+      "fechaDevolucion": "17/5/2023, 23:56:18",
       "id": 2
+    },
+    {
+      "LibroId": 2,
+      "clienteId": 1,
+      "fechaPrestamo": "2023-01-18",
+      "fechaDevolucion": "17/5/2023, 23:56:37",
+      "id": 3
+    },
+    {
+      "LibroId": 1,
+      "clienteId": 1,
+      "fechaPrestamo": "2023-01-11",
+      "fechaDevolucion": "18/5/2023, 0:34:43",
+      "id": 4
+    },
+    {
+      "LibroId": 2,
+      "clienteId": 1,
+      "fechaPrestamo": "2023-01-18",
+      "fechaDevolucion": "18/5/2023, 0:34:46",
+      "id": 5
     }
   ]
 }

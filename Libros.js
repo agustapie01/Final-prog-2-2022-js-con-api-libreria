@@ -1,3 +1,5 @@
+
+
 const NomLibro = document.querySelector("#NomLibro")
 const autor = document.querySelector("#autor_libro")
 const lista = document.querySelector("#lista")
@@ -25,6 +27,7 @@ async function mostrarlibros(){
     `
     <h3> Lista de libros</h3>
     <tr>
+      <th scope="col"></th>
       <th scope="col">Nombre:</th>
       <th scope="col">Autor:</th>
       <th scope="col">Prestado:</th>
@@ -36,6 +39,7 @@ async function mostrarlibros(){
         lista.innerHTML += 
         `       
         <tr>
+        <th scope="col"> ${Libros.id}</th>
         <th scope="col"> ${Libros.Nombrelibro}</th>
         <th scope="col">${Libros.autor}</th>
         <th scope="col">${Libros.prestado}</th>
@@ -48,27 +52,42 @@ async function mostrarlibros(){
 }
 
 async function guardarlibro(){
+
+
+  resp2 = await axios.get("http://localhost:3000/Libros")
+
   
-  // resp= await axios.get("http://localhost:3000/Libros")
-
-  resp= await axios.post ("http://localhost:3000/Libros",{
-
+  if(resp2.data.filter((Libros)=>Libros.Nombrelibro === NomLibro.value)){
+    resp= await axios.post ("http://localhost:3000/Libros",{
     Nombrelibro: NomLibro.value,
     autor: autor.value,
     prestado: false,
-  
+    vecesPrestado: 0  
   })
+  alert("se guardo piola")
+    
+  }
+
+  else{
+    alert("No se puede guardar")
+
+
+  }
 
 }
 
 
 async function borrarlibro(id){
-
-
   resp = await axios.get("http://localhost:3000/Libros/"+id)
-    // alert("Se borro el libro correctamente")
+  
+  if(resp.data.vecesPrestado>0){
+    alert("No se puede borrar el Libro porque fue alquilado alguna vez")
+  } 
+  
+  else{
+    
     await axios.delete("http://localhost:3000/Libros/"+id)
-
+  }
 
 }
 
@@ -78,11 +97,23 @@ async function borrarlibro(id){
 async function editarlibro(id){
   auxId = id
   resp = await axios.get ("http://localhost:3000/Libros/"+ id)
-        btnCancelar.hidden =false
-        btnGuardar.hidden = true
-        btnEditar.hidden = false
-        NomLibro.value = resp.data.Nombrelibro
-        autor.value = resp.data.autor
+  resp2 = await axios.get("http://localhost:3000/prestamo")
+  if(resp2.data.find((prestamo)=> prestamo.LibrosId == id)){
+    alert("No se puede editar el libro porque esta alquilado")
+    NomLibro.value = ""
+    autor.value = ""
+    btnCancelar.hidden =false
+    btnGuardar.hidden = true
+    btnEditar.hidden = false
+  }
+
+  else{
+    btnCancelar.hidden =false
+    btnGuardar.hidden = true
+    btnEditar.hidden = false
+    NomLibro.value = resp.data.Nombrelibro
+    autor.value = resp.data.autor
+  }
         
 
 }
