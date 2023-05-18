@@ -4,7 +4,11 @@
 }
 
 body{
+<<<<<<< HEAD
     background-color: rgb(0, 0, 0);
+=======
+    background-color: brown;
+>>>>>>> ea32eb32cb1ef829ed4565fbc8c5593c01b588b7
     background-image :url("https://www.lanacion.com.ar/resizer/yuOFH3qI3_rmEyfBa-LOsGlKkcs=/1920x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/UI7EKYKX7JFTLFT3AKK5JDJTOU.jpg");
     background-size: 70%;
 }
@@ -125,7 +129,11 @@ nav>ul>li>a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     background-color:rgb(71, 64, 64);
+=======
+    background-color: rgb(71, 64, 64);
+>>>>>>> ea32eb32cb1ef829ed4565fbc8c5593c01b588b7
 }
 
 #caption_prestamo{
@@ -157,6 +165,7 @@ nav>ul>li>a:hover{
     color: white;
     background-color: red
 
+<<<<<<< HEAD
 }
 
 
@@ -173,4 +182,6 @@ nav>ul>li>a:hover{
 #th_prestamo{
     background-color: white;
     padding: 10px;
+=======
+>>>>>>> ea32eb32cb1ef829ed4565fbc8c5593c01b588b7
 }
